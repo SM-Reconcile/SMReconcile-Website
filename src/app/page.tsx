@@ -110,7 +110,7 @@ export default function Home() {
                 >
                   <div>
                     <CloudinaryImg
-                      className="float-right ml-6 w-40 md:w-72"
+                      className="float-right ml-6 w-40 md:w-72 md:mb-5"
                       publicId={`reconcile/${item.image}`}
                       width="1500"
                       height="920"
