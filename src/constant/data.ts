@@ -28,20 +28,73 @@ export const serviceData = [
     {
         title: "Sewage Treatment Solutions",
         description:
-            "We specialize in advanced sewage treatment solutions, employing innovative technologies to purify wastewater and mitigate environmental risks.",
+            "Our cutting-edge sewage treatment solutions utilize state-of-the-art technology to effectively process wastewater, ensuring environmental safety and sustainability.",
         image: "machine-1", // Replace with the path to the animation for this service
     },
     {
         title: "Environmental Consultancy",
         description:
-            "Our consultancy services offer comprehensive strategies to address environmental concerns, collaborating with experts and institutions for sustainable solutions.",
-        image: "machine-4", // Replace with the path to the animation for this service
+            "Our consultancy services offer expert guidance and strategies to tackle diverse environmental challenges, fostering sustainable practices in collaboration with leading experts and institutions.",
+        image: "environmental-consultancy", // Replace with the path to the animation for this service
     },
     {
         title: "Effluent Treatment Plant",
         description:
-            "Our consultancy services offer comprehensive strategies to address environmental concerns, collaborating with experts and institutions for sustainable solutions",
-        image: "machine-3", // Replace with the path to the animation for this service
+            "We specialize in designing and implementing efficient effluent treatment plants, ensuring compliance with environmental standards and mitigating industrial wastewater hazards.",
+        image: "etp", // Replace with the path to the animation for this service
     },
-    // Add more objects for additional services with respective titles, descriptions, and animation paths
 ];
+
+export const missionData = [
+    {
+        title: "Environmental Impact",
+        description:
+            "Our vision is to revolutionize environmental solutions, supporting corporate clients and investors in sustainable growth through advanced technologies like Sewage Treatment Plants (STPs) and Effluent Treatment Plants (ETPs).",
+        image: `machine-1`,
+    },
+    {
+        title: "Tailored Environmental Solutions",
+        description:
+            "At our core, we specialize in tailored environmental strategies, providing expertise in understanding, analyzing, and executing STP and ETP solutions for specific industrial and commercial needs.",
+        image: `machine-2`,
+    },
+    {
+        title: "Diverse Environmental Support",
+        description:
+            "With extensive experience, we cater to a wide spectrum of clients—from multinational corporations to small/medium-sized enterprises—offering environmental support, including STP and ETP installations, to meet diverse industry requirements.",
+        image: `machine-3`,
+    },
+    {
+        title: "Innovative Technology Integration",
+        description: "We integrate cutting-edge technology with environmental expertise to deliver the most efficient and sustainable STP and ETP solutions.",
+        image: `machine-4`,
+    },
+];
+
+
+export const commitmentData = [
+    {
+        title: "Environmental Stewardship",
+        description:
+            "Our vision is to lead corporate environmental initiatives, aiding clients and investors in sustainable growth strategies and international development.",
+        image: `save-earth`,
+    },
+    {
+        title: "Tailored Solutions",
+        description:
+            "At our core, we excel in providing tailored environmental strategies, analyzing and executing plans for sustainable growth in specific markets.",
+        image: `tailored-solutions`,
+    },
+    {
+        title: "Diverse Expertise",
+        description:
+            "With vast experience, we assist clients ranging from international corporations to small/medium-sized businesses, offering guidance to debt providers and private equity investors in the environmental sector.",
+        image: `machine-3`,
+    },
+    {
+        title: "Innovative Approach",
+        description: "We blend cutting-edge technology and expertise to create sustainable environmental solutions.",
+        image: `innovation`,
+    },
+];
+
