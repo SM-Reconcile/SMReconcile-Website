@@ -3,7 +3,7 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
 
-const Banner = (bannerWords : string[]) => {
+const Banner = ({ bannerWords }: { bannerWords: string[] }) => {
   return (
     <div>
       <Typewriter
