@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { PreloadProvider } from "@/context/PreloadContext";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,7 +26,9 @@ export default function RootLayout({
           inter.className
         )}
       >
+        <Navbar />
         <PreloadProvider>{children}</PreloadProvider>
+        <Footer />
       </body>
     </html>
   );
