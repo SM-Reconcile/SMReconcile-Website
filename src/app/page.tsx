@@ -1,5 +1,6 @@
 "use client";
 
+import Contactus from "@/components/Contactus";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import CloudinaryImg from "@/components/images/CloudinaryImage";
 import Banner from "@/components/ui/Banner";
@@ -99,12 +100,12 @@ export default function Home() {
           <h2 className="md:text-4xl text-3xl font-bold mb-6 text-green-600">
             Our Services
           </h2>
-          <div className="md:text-center text-left grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
+          <div className="md:text-center text-left grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Service 1 */}
             {serviceData.map((item) => {
               return (
                 <div
-                  className="bg-white rounded-lg shadow-md p-6"
+                  className="bg-white rounded-lg shadow-md p-6 transform hover:shadow-xl transition duration-500 ease-in-out"
                   key={item.title}
                 >
                   <div>
@@ -137,6 +138,25 @@ export default function Home() {
           </div>
         </MaxWidthWrapper>
       </section>
+
+      {/* Contact us */}
+      <MaxWidthWrapper className="relative md:my-20 my-10 ">
+        <div className="relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            {/* Page header */}
+            <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
+              <h2 className="md:text-4xl text-3xl font-bold mb-6 text-zinc-600">
+                Get in touch
+              </h2>
+              <p className="text-xl text-zinc-600">
+                We are here to help and answer any question you might have. We
+                look forward to hearing from you.
+              </p>
+            </div>
+            <Contactus />
+          </div>
+        </div>
+      </MaxWidthWrapper>
     </main>
   );
 }
