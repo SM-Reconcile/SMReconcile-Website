@@ -1,8 +1,11 @@
 "use client";
 
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import CloudinaryImg from "@/components/images/CloudinaryImage";
 import Banner from "@/components/ui/Banner";
 import { buttonVariants } from "@/components/ui/button";
+import Container from "@/components/ui/container";
+import { serviceData } from "@/constant/data";
 import useLoaded from "@/hooks/useLoaded";
 import clsx from "clsx";
 import { ArrowRight } from "lucide-react";
@@ -55,6 +58,85 @@ export default function Home() {
           Get started <ArrowRight className="ml-2 h-5 w-5" />
         </Link>
       </MaxWidthWrapper>
+
+      {/* value proposition section */}
+      <div>
+        <div className="relative isolate">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+          >
+            <div
+              style={{
+                clipPath:
+                  "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+              }}
+              className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#3C873A] to-[#B4C8AD] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+            />
+          </div>
+
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+          >
+            <div
+              style={{
+                clipPath:
+                  "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+              }}
+              className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#3C873A] to-[#B4C8AD] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+            />
+          </div>
+        </div>
+      </div>
+      <div data-fade="1">
+        <Container />
+      </div>
+
+      {/* Service Data */}
+      <section className="py-12">
+        <MaxWidthWrapper className="text-center">
+          <h2 className="md:text-4xl text-3xl font-bold mb-6 text-green-600">
+            Our Services
+          </h2>
+          <div className="md:text-center text-left grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
+            {/* Service 1 */}
+            {serviceData.map((item) => {
+              return (
+                <div
+                  className="bg-white rounded-lg shadow-md p-6"
+                  key={item.title}
+                >
+                  <div>
+                    <CloudinaryImg
+                      className="float-right ml-6 w-40 md:w-72"
+                      publicId={`reconcile/${item.image}`}
+                      width="1500"
+                      height="920"
+                      alt="Photo of me"
+                      preview={false}
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4 text-zinc-900">
+                    {item.title}
+                  </h3>
+                  <p className="text-zinc-600">{item.description}</p>
+
+                  <Link
+                    href={"/service1"}
+                    className={buttonVariants({
+                      className: "mt-5 hover:shadow-xl",
+                      size: "sm",
+                    })}
+                  >
+                    Learn more
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+        </MaxWidthWrapper>
+      </section>
     </main>
   );
 }
