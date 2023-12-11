@@ -7,7 +7,7 @@ import useLoaded from "@/hooks/useLoaded";
 import clsx from "clsx";
 import Link from "next/link";
 
-export const Page = ({ params }: { params: { slug: string } }) => {
+const SlugPage = ({ params }: { params: { slug: string } }) => {
   const data =
     fullServiceData.find((item) => item.slug === params.slug) ||
     fullServiceData[0];
@@ -72,4 +72,4 @@ export const Page = ({ params }: { params: { slug: string } }) => {
   );
 };
 
-export default Page;
+export default SlugPage;
