@@ -98,3 +98,25 @@ export const commitmentData = [
     },
 ];
 
+
+export const faqs = [
+    {
+        question: "What is the difference between STP and ETP?",
+        answer: "STP is Sewage Treatment Plant and ETP is Effluent Treatment Plant."
+    },
+    {
+        question: "How does STP work?",
+        answer: "STP works by using a combination of physical, chemical, and biological processes to remove contaminants from wastewater."
+    },
+    {
+        question: "How does ETP work?",
+        answer: "ETP works by using a combination of physical, chemical, and biological processes to remove contaminants from industrial wastewater."
+
+    },
+    {
+        question: "How long does STP last?",
+        answer: "STP can last for 15-20 years."
+    }
+
+    // Add more FAQ items as needed
+];
