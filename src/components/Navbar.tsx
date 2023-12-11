@@ -5,10 +5,6 @@ import Link from "next/link";
 import {
   Home,
   User,
-  Book,
-  MessageSquare,
-  Newspaper,
-  ServerIcon,
   Contact2Icon,
 } from "lucide-react";
 
@@ -74,25 +70,18 @@ const Navbar = () => {
               <span className="text-lg">Home</span>
             </Link>
             <Link
-              href={"/about"}
-              className="flex items-center justify-center p-4 font-semibold text-gray-800 hover:text-green-500 hover:bg-gray-100"
-            >
-              <User size={24} className="mr-2" />
-              <span className="text-lg">About</span>
-            </Link>
-            <Link
-              href={"/news"}
-              className="flex items-center justify-center p-4 font-semibold text-gray-800 hover:text-green-500 hover:bg-gray-100"
-            >
-              <Newspaper size={24} className="mr-2" />
-              <span className="text-lg">News</span>
-            </Link>
-            <Link
               href={"/services"}
               className="flex items-center justify-center p-4 font-semibold text-gray-800 hover:text-green-500 hover:bg-gray-100"
             >
               <Contact2Icon size={24} className="mr-2" />
               <span className="text-lg">Services</span>
+            </Link>
+            <Link
+              href={"/about"}
+              className="flex items-center justify-center p-4 font-semibold text-gray-800 hover:text-green-500 hover:bg-gray-100"
+            >
+              <User size={24} className="mr-2" />
+              <span className="text-lg">About</span>
             </Link>
           </div>
 
@@ -109,26 +98,6 @@ const Navbar = () => {
               <span>Home</span>
             </Link>
             <Link
-              href={"/about"}
-              className="flex z-40 font-semibold items-center transition duration-300 ease-in-out hover:text-green-500"
-            >
-              <User
-                size={20}
-                className="mr-1 transition duration-300 ease-in-out transform hover:scale-110"
-              />
-              <span>About</span>
-            </Link>
-            <Link
-              href={"/news"}
-              className="flex z-40 font-semibold items-center transition duration-300 ease-in-out hover:text-green-500"
-            >
-              <Newspaper
-                size={20}
-                className="mr-1 transition duration-300 ease-in-out transform hover:scale-110"
-              />
-              <span>News</span>
-            </Link>
-            <Link
               href={"/services"}
               className="flex z-40 font-semibold items-center transition duration-300 ease-in-out hover:text-green-500"
             >
@@ -137,6 +106,16 @@ const Navbar = () => {
                 className="mr-1 transition duration-300 ease-in-out transform hover:scale-110"
               />
               <span className="text-lg">Services</span>
+            </Link>
+            <Link
+              href={"/about"}
+              className="flex z-40 font-semibold items-center transition duration-300 ease-in-out hover:text-green-500"
+            >
+              <User
+                size={20}
+                className="mr-1 transition duration-300 ease-in-out transform hover:scale-110"
+              />
+              <span>About</span>
             </Link>
           </div>
         </div>
