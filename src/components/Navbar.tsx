@@ -2,7 +2,15 @@
 import React, { useState } from "react";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import Link from "next/link";
-import { Home, User, Book, MessageSquare } from "lucide-react";
+import {
+  Home,
+  User,
+  Book,
+  MessageSquare,
+  Newspaper,
+  ServerIcon,
+  Contact2Icon,
+} from "lucide-react";
 
 const Navbar = () => {
   const [showMobileNav, setShowMobileNav] = useState(false);
@@ -73,18 +81,18 @@ const Navbar = () => {
               <span className="text-lg">About</span>
             </Link>
             <Link
-              href={"/blog"}
+              href={"/news"}
               className="flex items-center justify-center p-4 font-semibold text-gray-800 hover:text-green-500 hover:bg-gray-100"
             >
-              <Book size={24} className="mr-2" />
-              <span className="text-lg">Blog</span>
+              <Newspaper size={24} className="mr-2" />
+              <span className="text-lg">News</span>
             </Link>
             <Link
-              href={"/contact"}
+              href={"/services"}
               className="flex items-center justify-center p-4 font-semibold text-gray-800 hover:text-green-500 hover:bg-gray-100"
             >
-              <MessageSquare size={24} className="mr-2" />
-              <span className="text-lg">Contact</span>
+              <Contact2Icon size={24} className="mr-2" />
+              <span className="text-lg">Services</span>
             </Link>
           </div>
 
@@ -111,24 +119,24 @@ const Navbar = () => {
               <span>About</span>
             </Link>
             <Link
-              href={"/blog"}
+              href={"/news"}
               className="flex z-40 font-semibold items-center transition duration-300 ease-in-out hover:text-green-500"
             >
-              <Book
+              <Newspaper
                 size={20}
                 className="mr-1 transition duration-300 ease-in-out transform hover:scale-110"
               />
-              <span>Blog</span>
+              <span>News</span>
             </Link>
             <Link
-              href={"/contact"}
+              href={"/services"}
               className="flex z-40 font-semibold items-center transition duration-300 ease-in-out hover:text-green-500"
             >
-              <MessageSquare
-                size={20}
+              <Contact2Icon
+                size={24}
                 className="mr-1 transition duration-300 ease-in-out transform hover:scale-110"
               />
-              <span>Contact</span>
+              <span className="text-lg">Services</span>
             </Link>
           </div>
         </div>
