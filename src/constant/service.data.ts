@@ -20,27 +20,6 @@ export const fullServiceData = [
         image: "etp", // Replace with the path to the animation for this service
         slug: "effluent-treatment-plant"
     },
-    {
-        title: "Effluent Treatment Plant",
-        description:
-            "We specialize in designing and implementing efficient effluent treatment plants, ensuring compliance with environmental standards and mitigating industrial wastewater hazards.",
-        image: "etp", // Replace with the path to the animation for this service
-        slug: "effluent-treatment-plant"
-    },
-    {
-        title: "Effluent Treatment Plant",
-        description:
-            "We specialize in designing and implementing efficient effluent treatment plants, ensuring compliance with environmental standards and mitigating industrial wastewater hazards.",
-        image: "etp", // Replace with the path to the animation for this service
-        slug: "effluent-treatment-plant"
-    },
-    {
-        title: "Effluent Treatment Plant",
-        description:
-            "We specialize in designing and implementing efficient effluent treatment plants, ensuring compliance with environmental standards and mitigating industrial wastewater hazards.",
-        image: "etp", // Replace with the path to the animation for this service
-        slug: "effluent-treatment-plant"
-    },
 ];
 
 export const serviceData =  fullServiceData.slice(0,3);

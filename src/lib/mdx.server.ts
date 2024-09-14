@@ -65,6 +65,16 @@ export function preFetch({ type }: { type: ContentType }) {
       "utf8"
     );
 
+    const treatplant = readFileSync(
+      join(
+        process.cwd(),
+        "public",
+        "contents",
+        type,
+        "effluent-treatment-plant.mdx"
+      ),
+      "utf8"
+    );
     const services = [
       {
         slug: "sewage-treatment-solutions",
@@ -73,6 +83,10 @@ export function preFetch({ type }: { type: ContentType }) {
       {
         slug: "environmental-consultancy",
         source: envconsult,
+      },
+      {
+        slug: "effluent-treatment-plant",
+        source: treatplant,
       },
     ];
 
