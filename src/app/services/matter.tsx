@@ -12,7 +12,6 @@ const Matter = ({ code }: { code: string }) => {
           components={
             {
               ...MDXComponents,
-              // eslint-disable-next-line @typescript-eslint/no-explicit-any
             } as any
           }
         />
