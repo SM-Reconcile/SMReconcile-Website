@@ -20,7 +20,7 @@ const Navbar = () => {
       <MaxWidthWrapper>
         <div className="flex h-14 items-center border-b border-zinc-200 relative">
           <Link href={"/"} className="flex z-40 font-semibold">
-            <span>Reconcile logo.</span>
+            <span>SMReconcile</span>
           </Link>
 
           {/* Mobile Navigation Toggle Button */}
