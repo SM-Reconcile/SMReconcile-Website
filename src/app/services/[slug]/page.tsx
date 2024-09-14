@@ -5,6 +5,7 @@ import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Typewriter from "typewriter-effect";
 import useLoaded from "@/hooks/useLoaded";
 import Matter from "../matter";
+import Contactus from "@/components/Contactus";
 
 // Define the props type for the component
 interface PageProps {
@@ -56,9 +57,13 @@ const Page: React.FC<PageProps> = ({ params }) => {
         )}
         data-fade="1"
       >
-        <article className={clsx(`p-10 md:p-20`)}>
-          <Matter code={data.code} />
-        </article>
+        <div className="flex flex-col p-10 md:p-20">
+          <article className={clsx(``)}>
+            <Matter code={data.code} />
+          </article>
+          <h1 className="flex w-full justify-center py-5 md:py-10">Contact us</h1>
+          <Contactus />
+        </div>
       </MaxWidthWrapper>
     </main>
   );

@@ -18,7 +18,6 @@ export async function GET(req: NextRequest) {
       preRoute?.source as string,
       preRoute?.slug as string
     );
-    console.log(file);
     if (!file)
       return new NextResponse(null, { status: 404, statusText: "Not found " });
 
