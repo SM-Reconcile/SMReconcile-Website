@@ -1,25 +1,32 @@
 export const fullServiceData = [
     {
-        title: "Sewage Treatment Solutions",
+        title: "MBBR Technology",
         description:
-            "Our cutting-edge sewage treatment solutions utilize state-of-the-art technology to effectively process wastewater, ensuring environmental safety and sustainability.",
-        image: "machine-1", // Replace with the path to the animation for this service
-        slug: "sewage-treatment-solutions"
+            "Moving Bed Biofilm Reactor (MBBR) technology is an advanced biological process for wastewater treatment, offering high efficiency and compact design.",
+        image: "machine-1",
+        slug: "mbbr-technology"
     },
     {
-        title: "Environmental Consultancy",
+        title: "MBR Technology",
         description:
-            "Our consultancy services offer expert guidance and strategies to tackle diverse environmental challenges, fostering sustainable practices in collaboration with leading experts and institutions.",
-        image: "environmental-consultancy",
-        slug: "environmental-consultancy"
+            "Membrane Bioreactor (MBR) combines conventional activated sludge process with membrane filtration to produce high-quality effluent suitable for reuse.",
+        image: "machine-2",
+        slug: "mbr-technology"
     },
     {
-        title: "Effluent Treatment Plant",
+        title: "SBR Technology",
         description:
-            "We specialize in designing and implementing efficient effluent treatment plants, ensuring compliance with environmental standards and mitigating industrial wastewater hazards.",
-        image: "etp", // Replace with the path to the animation for this service
-        slug: "effluent-treatment-plant"
+            "Sequencing Batch Reactor (SBR) is a fill-and-draw activated sludge system for wastewater treatment, known for its flexibility and effectiveness.",
+        image: "machine-3",
+        slug: "sbr-technology"
+    },
+    {
+        title: "STP/ETP Technology",
+        description:
+            "Comprehensive Sewage Treatment Plants (STP) and Effluent Treatment Plants (ETP) customized for specific industrial and commercial requirements.",
+        image: "etp",
+        slug: "stp-etp-technology"
     },
 ];
 
-export const serviceData =  fullServiceData.slice(0,3);
+export const serviceData = fullServiceData;

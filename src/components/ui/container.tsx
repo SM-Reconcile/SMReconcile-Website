@@ -1,8 +1,19 @@
+"use client";
+
 import { cn } from "@/lib/utils";
-import Lottie from "lottie-react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { containerData } from "@/constant/data";
+import dynamic from "next/dynamic";
+
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+
 const Container = () => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <div
       className={cn(
@@ -26,11 +37,15 @@ const Container = () => {
             key={item.title}
           >
             <span className="w-3/4 h-full">
-              <Lottie
-                animationData={item.animation}
-                className="flex justify-center items-center"
-                loop={true}
-              />
+              {mounted ? (
+                <Lottie
+                  animationData={item.animation}
+                  className="flex justify-center items-center"
+                  loop={true}
+                />
+              ) : (
+                <div className="flex justify-center items-center h-full w-full bg-zinc-100 rounded-md" />
+              )}
             </span>
 
             <div className={cn("md:mt-4", isFirst ? "" : "mt-2")}>

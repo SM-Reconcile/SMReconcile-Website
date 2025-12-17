@@ -6,23 +6,40 @@ export const containerData: {
     animation: any;
 }[] = [
         {
-            title: ">40",
-            content:
-                "Million people served daily with drinking water across the country.",
+            title: "30%",
+            content: "Reduction of pollutants after primary chemical treatment.",
             animation: animationData,
         },
         {
-            title: "2,200+",
-            content: "ML of drinking water treated every day in 28 plants.",
+            title: "65%",
+            content: "Reduction of pollutants after secondary treatment.",
             animation: animationData,
         },
-        {
-            title: "500 +",
-            content: "ML of waste water treated every day in 15 plants..",
+         {
+            title: "5%",
+            content: "Reduction of pollutants after tertiary treatment.",
             animation: animationData,
         },
     ];
 
+export const philosophyData = [
+    {
+        title: "Resource Abundance",
+        content: "Create natural abundance of resources like water, fertile sand etc."
+    },
+    {
+        title: "Ecological Balance",
+        content: "Reduce unnecessary burden on ecology for digesting what human being himself can manage."
+    },
+    {
+        title: "Health & Hygiene",
+        content: "Conserve pure air water and fertile sand without compromising with health and hygiene."
+    },
+    {
+        title: "Unique Products",
+        content: "Products conceptualized are unique, viable, and low cost with minimal maintenance."
+    }
+];
 
 export const missionData = [
     {
@@ -69,33 +86,29 @@ export const commitmentData = [
         description:
             "With vast experience, we assist clients ranging from international corporations to small/medium-sized businesses, offering guidance to debt providers and private equity investors in the environmental sector.",
         image: `machine-3`,
-    },
-    {
-        title: "Innovative Approach",
-        description: "We blend cutting-edge technology and expertise to create sustainable environmental solutions.",
-        image: `innovation`,
-    },
+    }
 ];
 
 
 export const faqs = [
     {
-        question: "What is the difference between STP and ETP?",
-        answer: "STP is Sewage Treatment Plant and ETP is Effluent Treatment Plant."
+        question: "What is Waste Water?",
+        answer: "Waste water is the water that emerges after fresh water is used by human beings for domestic, commercial and industrial use."
     },
     {
-        question: "How does STP work?",
-        answer: "STP works by using a combination of physical, chemical, and biological processes to remove contaminants from wastewater."
+        question: "What Are The Constituents Of Waste Water (Sewage)?",
+        answer: "Wastewater (sewage) contains physical constituents like suspended solids and dissolved minerals; chemical constituents including organic matter, toxic chemicals. Biological constituents such as pathogens and non-pathogenic microorganisms. Additionally, it may contain oils, detergents, and pharmaceuticals."
     },
     {
-        question: "How does ETP work?",
-        answer: "ETP works by using a combination of physical, chemical, and biological processes to remove contaminants from industrial wastewater."
-
+        question: "How do we assess the pollution level of Sewage Water?",
+        answer: "BOD, COD, TDS, TSS, pH to name a few."
     },
     {
-        question: "How long does STP last?",
-        answer: "STP can last for 15-20 years."
+        question: "Why to avoid basement sewage treatment plants?",
+        answer: "Basement sewage treatment plant requires a lot of air for treatment and there is a lot of air that comes out from the treatment plant, both of which have to be artificially regulated resulting into higher cost. Otherwise foul smell will be observed."
+    },
+    {
+        question: "What problems can be expected with an installed STP?",
+        answer: "Common problems include: Design Faults (undersized tanks, inadequate aeration/pumps), Strong Bad Odour (wrong location/procedure, lack of aeration), System Overflow (faulty sensors, increased flow), and Control Panel Malfunctions."
     }
-
-    // Add more FAQ items as needed
 ];

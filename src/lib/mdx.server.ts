@@ -75,6 +75,47 @@ export function preFetch({ type }: { type: ContentType }) {
       ),
       "utf8"
     );
+    const mbbrtech = readFileSync(
+      join(
+        process.cwd(),
+        "public",
+        "contents",
+        type,
+        "mbbr-technology.mdx"
+      ),
+      "utf8"
+    );
+    const mbrtech = readFileSync(
+      join(
+        process.cwd(),
+        "public",
+        "contents",
+        type,
+        "mbr-technology.mdx"
+      ),
+      "utf8"
+    );
+    const sbrtech = readFileSync(
+      join(
+        process.cwd(),
+        "public",
+        "contents",
+        type,
+        "sbr-technology.mdx"
+      ),
+      "utf8"
+    );
+    const stpetptech = readFileSync(
+      join(
+        process.cwd(),
+        "public",
+        "contents",
+        type,
+        "stp-etp-technology.mdx"
+      ),
+      "utf8"
+    );
+
     const services = [
       {
         slug: "sewage-treatment-solutions",
@@ -87,6 +128,22 @@ export function preFetch({ type }: { type: ContentType }) {
       {
         slug: "effluent-treatment-plant",
         source: treatplant,
+      },
+      {
+        slug: "mbbr-technology",
+        source: mbbrtech,
+      },
+      {
+        slug: "mbr-technology",
+        source: mbrtech,
+      },
+      {
+        slug: "sbr-technology",
+        source: sbrtech,
+      },
+      {
+        slug: "stp-etp-technology",
+        source: stpetptech,
       },
     ];
 

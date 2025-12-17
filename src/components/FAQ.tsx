@@ -1,4 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { Plus, Minus } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 type FAQItem = {
   question: string;
@@ -17,47 +19,60 @@ const FAQ = ({ faqs }: FAQProps) => {
   };
 
   return (
-    <div className="container mx-auto py-8">
-      <div className="w-full flex justify-center mb-2">
-        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-green-600">
-          Frequently Asked Questions
-        </h1>
-      </div>
+    <div className="py-12">
+      <div className="container mx-auto px-4 max-w-3xl">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-zinc-900">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-zinc-600">
+            Common questions about sewage treatment and our solutions.
+          </p>
+        </div>
 
-      <div className="divide-y divide-zinc">
-        {faqs.map((faq, index) => (
-          <div key={index} className="py-4">
-            <div
-              className="flex justify-between items-center cursor-pointer transition-all duration-300 ease-in-out"
-              onClick={() => toggleFAQ(index)}
-            >
-              <h2 className="text-xl font-semibold">{faq.question}</h2>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className={`h-6 w-6 transform ${
-                  activeIndex === index ? "rotate-180" : "rotate-0"
-                } transition-transform duration-300 ease-in-out`}
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+        <div className="space-y-2">
+          {faqs.map((faq, index) => {
+            const isOpen = activeIndex === index;
+            return (
+              <div 
+                key={index} 
+                className="border-b border-zinc-200 last:border-none"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d={activeIndex === index ? "M5 15l7-7 7 7" : "M19 9l-7 7-7-7"}
-                />
-              </svg>
-            </div>
-            <div
-              className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                activeIndex === index ? "max-h-40" : "max-h-0"
-              }`}
-            >
-              <p className="mt-4 text-zinc">{faq.answer}</p>
-            </div>
-          </div>
-        ))}
+                <button
+                  className="w-full flex justify-between items-center py-6 text-left cursor-pointer focus:outline-none group"
+                  onClick={() => toggleFAQ(index)}
+                  aria-expanded={isOpen}
+                >
+                  <span className={cn(
+                    "text-lg font-medium pr-8 transition-colors group-hover:text-green-700",
+                    isOpen ? "text-green-700 font-semibold" : "text-zinc-800"
+                  )}>
+                    {faq.question}
+                  </span>
+                  <span className={cn(
+                    "flex-shrink-0 transition-all duration-300 transform",
+                    isOpen ? "rotate-180 text-green-600" : "text-zinc-400 group-hover:text-green-600"
+                  )}>
+                    {isOpen ? <Minus size={20} /> : <Plus size={20} />}
+                  </span>
+                </button>
+                
+                <div
+                  className={cn(
+                    "grid transition-all duration-300 ease-in-out",
+                    isOpen ? "grid-rows-[1fr] opacity-100 mb-6" : "grid-rows-[0fr] opacity-0"
+                  )}
+                >
+                  <div className="overflow-hidden">
+                    <p className="text-zinc-600 leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

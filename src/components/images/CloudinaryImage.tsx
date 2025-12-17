@@ -3,9 +3,11 @@ import { buildUrl } from 'cloudinary-build-url';
 import clsx from 'clsx';
 import Image from 'next/image';
 import * as React from 'react';
-import Lightbox from 'react-image-lightbox';
+import dynamic from 'next/dynamic';
 
 import 'react-image-lightbox/style.css';
+
+const Lightbox = dynamic(() => import('react-image-lightbox'), { ssr: false });
 
 type CloudinaryImgType = {
   publicId: string;
@@ -21,6 +23,7 @@ type CloudinaryImgType = {
     height: number;
   };
   mdx?: boolean;
+  fill?: boolean;
 } & React.ComponentPropsWithoutRef<'figure'>;
 
 export default function CloudinaryImg({
@@ -33,6 +36,7 @@ export default function CloudinaryImg({
   preview = true,
   noStyle = false,
   mdx = false,
+  fill = false,
   style,
   aspect,
   ...rest
@@ -87,10 +91,10 @@ export default function CloudinaryImg({
       <div
         style={{
           position: 'relative',
-          height: 0,
-          paddingTop: aspectRatio
+          height: fill ? '100%' : 0,
+          paddingTop: fill ? 0 : (aspectRatio
             ? `${aspectRatio * 100}%`
-            : `${(+height / +width) * 100}%`,
+            : `${(+height / +width) * 100}%`),
           cursor: preview ? 'zoom-in' : 'default',
         }}
         className='img-blur'
@@ -108,13 +112,13 @@ export default function CloudinaryImg({
             background-size: 100%;
           }
         `}</style>
-        <div className='absolute left-0 top-0'>
+        <div className='absolute left-0 top-0 w-full h-full'>
           <Image
             width={finalWidth as number}
             height={finalHeight as number}
             src={url}
             alt={alt}
-            title={title || alt}
+            className='w-full h-full object-cover'
           />
         </div>
       </div>

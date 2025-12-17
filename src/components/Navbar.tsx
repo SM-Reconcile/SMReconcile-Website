@@ -1,122 +1,126 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import Link from "next/link";
-import {
-  Home,
-  User,
-  Contact2Icon,
-} from "lucide-react";
+import { usePathname } from "next/navigation";
+import { Menu, X, ArrowRight } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "./ui/button";
 
 const Navbar = () => {
   const [showMobileNav, setShowMobileNav] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
-  const toggleMobileNav = () => {
-    setShowMobileNav(!showMobileNav);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "Services", href: "/services" },
+    { name: "About", href: "/about" },
+  ];
+
+  const contactHref = pathname === "/" ? "#contact" : "/#contact";
 
   return (
-    <nav className="sticky h-14 inset-x-0 top-0 z-30 w-full border-b border-gray-200 bg-white/75 backdrop-blur-lg transition-all">
-      <MaxWidthWrapper>
-        <div className="flex h-14 items-center border-b border-zinc-200 relative">
-          <Link href={"/"} className="flex z-40 font-semibold">
-            <span>SMReconcile</span>
+    <nav
+      className={cn(
+        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
+        scrolled
+          ? "h-16 bg-white/80 backdrop-blur-md border-b border-zinc-200/50 shadow-sm"
+          : "h-20 bg-transparent"
+      )}
+    >
+      <MaxWidthWrapper className="h-full">
+        <div className="flex h-full items-center justify-between">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2 z-50">
+            <span className="text-2xl font-bold bg-gradient-to-r from-green-700 to-emerald-500 bg-clip-text text-transparent">
+              SMReconcile.
+            </span>
           </Link>
 
-          {/* Mobile Navigation Toggle Button */}
-          <button
-            className="md:hidden ml-auto mr-4"
-            onClick={toggleMobileNav}
-            aria-label="Toggle mobile navigation"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+          {/* Desktop Nav */}
+          <div className="hidden md:flex items-center gap-8">
+            <div className="flex items-center gap-1 bg-white/50 backdrop-blur-sm px-4 py-2 rounded-full border border-zinc-200/50 shadow-sm">
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className={cn(
+                      "px-4 py-2 rounded-full text-sm font-medium transition-all duration-300",
+                      isActive
+                        ? "bg-green-100 text-green-700"
+                        : "text-zinc-600 hover:text-green-600 hover:bg-zinc-50"
+                    )}
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
+            </div>
+            
+             <Link
+                className={cn(buttonVariants({ size: "sm", variant: "green" }), "rounded-full shadow-lg hover:shadow-green-200 transition-all")}
+                href={contactHref}
             >
-              {showMobileNav ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16m-7 6h7"
-                />
-              )}
-            </svg>
-          </button>
-
-          {/* Mobile Navigation Links */}
-          <div
-            className={`md:hidden ${
-              showMobileNav
-                ? "flex flex-col absolute top-14 left-0 right-0 bg-white border border-gray-300 rounded-md shadow-md"
-                : "hidden"
-            }`}
-          >
-            <Link
-              href={"/"}
-              className="flex items-center justify-center p-4 font-semibold text-gray-800 hover:text-green-500 hover:bg-gray-100"
-            >
-              <Home size={24} className="mr-2" />
-              <span className="text-lg">Home</span>
-            </Link>
-            <Link
-              href={"/services"}
-              className="flex items-center justify-center p-4 font-semibold text-gray-800 hover:text-green-500 hover:bg-gray-100"
-            >
-              <Contact2Icon size={24} className="mr-2" />
-              <span className="text-lg">Services</span>
-            </Link>
-            <Link
-              href={"/about"}
-              className="flex items-center justify-center p-4 font-semibold text-gray-800 hover:text-green-500 hover:bg-gray-100"
-            >
-              <User size={24} className="mr-2" />
-              <span className="text-lg">About</span>
+                Contact Us <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </div>
 
-          {/* Desktop Navigation Links */}
-          <div className="hidden md:flex flex-1 justify-end items-center space-x-4">
-            <Link
-              href={"/"}
-              className="flex z-40 font-semibold items-center transition duration-300 ease-in-out hover:text-green-500"
-            >
-              <Home
-                size={20}
-                className="mr-1 transition duration-300 ease-in-out transform hover:scale-110"
-              />
-              <span>Home</span>
-            </Link>
-            <Link
-              href={"/services"}
-              className="flex z-40 font-semibold items-center transition duration-300 ease-in-out hover:text-green-500"
-            >
-              <Contact2Icon
-                size={24}
-                className="mr-1 transition duration-300 ease-in-out transform hover:scale-110"
-              />
-              <span className="text-lg">Services</span>
-            </Link>
-            <Link
-              href={"/about"}
-              className="flex z-40 font-semibold items-center transition duration-300 ease-in-out hover:text-green-500"
-            >
-              <User
-                size={20}
-                className="mr-1 transition duration-300 ease-in-out transform hover:scale-110"
-              />
-              <span>About</span>
-            </Link>
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden z-50 p-2 text-zinc-600 hover:text-green-600 transition-colors"
+            onClick={() => setShowMobileNav(!showMobileNav)}
+            aria-label="Toggle menu"
+          >
+            {showMobileNav ? <X size={24} /> : <Menu size={24} />}
+          </button>
+
+          {/* Mobile Nav Overlay */}
+          <div
+            className={cn(
+              "fixed inset-0 bg-white/95 backdrop-blur-xl z-40 md:hidden transition-all duration-300 ease-in-out flex flex-col items-center justify-center gap-8",
+              showMobileNav
+                ? "opacity-100 pointer-events-auto translate-x-0"
+                : "opacity-0 pointer-events-none translate-x-full"
+            )}
+          >
+            <div className="flex flex-col items-center gap-6 w-full px-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setShowMobileNav(false)}
+                  className={cn(
+                    "text-2xl font-semibold transition-colors w-full text-center py-4 border-b border-zinc-100",
+                    pathname === link.href
+                      ? "text-green-600"
+                      : "text-zinc-600 hover:text-green-600"
+                  )}
+                >
+                  {link.name}
+                </Link>
+              ))}
+              <Link
+                href={contactHref}
+                onClick={() => setShowMobileNav(false)}
+                className={cn(
+                  buttonVariants({ size: "lg", variant: "green" }),
+                  "w-full rounded-full mt-4"
+                )}
+              >
+                Contact Us
+              </Link>
+            </div>
           </div>
         </div>
       </MaxWidthWrapper>
