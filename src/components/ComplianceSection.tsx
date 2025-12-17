@@ -114,7 +114,7 @@ const ComplianceSection = () => {
                             </div>
                             <div>
                                 <h4 className="font-semibold text-zinc-900 mb-1">Mandatory ETP Installation</h4>
-                                <p className="text-zinc-600 text-sm leading-relaxed">All industrial units requiring "consent to operate" must make their <strong className="text-green-700">primary effluent treatment plants fully operational</strong> within three months.</p>
+                                <p className="text-zinc-600 text-sm leading-relaxed">All industrial units requiring &quot;consent to operate&quot; must make their <strong className="text-green-700">primary effluent treatment plants fully operational</strong> within three months.</p>
                             </div>
                         </div>
                         <div className="flex gap-4">

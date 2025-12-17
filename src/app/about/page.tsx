@@ -46,7 +46,7 @@ const Page = () => {
             At SM Reconcile Environment Solutions Pvt Ltd, we are dedicated to
             providing innovative and sustainable environmental solutions. Our focus
             is on creating a lasting impact by employing cutting-edge technology to
-            address the world's environmental challenges.
+            address the world&apos;s environmental challenges.
           </div>
         </MaxWidthWrapper>
       </div>
